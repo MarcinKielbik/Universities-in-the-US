@@ -1,0 +1,21 @@
+<h2>Search Universities in United States</h2>
+
+<input type="text" [(ngModel)]="searchTerm" placeholder="Search" />
+<button (click)="searchUniversities()">Search</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Web Pages</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let university of universities">
+      <td>{{ university.name }}</td>
+      <td>
+        <a *ngFor="let webPage of university.web_pages" [href]="webPage" target="_blank">{{ webPage }}</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
